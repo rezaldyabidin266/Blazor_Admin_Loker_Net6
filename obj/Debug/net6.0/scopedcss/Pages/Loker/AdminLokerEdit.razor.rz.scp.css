@@ -1,0 +1,114 @@
+.edit-loker[b-nrz0bbcejv] {
+  padding-bottom: 2rem;
+}
+.edit-loker .z-depth-2[b-nrz0bbcejv] {
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+}
+.edit-loker .img-wrap[b-nrz0bbcejv] {
+  text-align: center;
+  /*.img-account-profile {
+            max-width: 100%;
+            display: block;
+            height: auto;
+            border-radius: 15px;
+        }*/
+}
+.edit-loker .img-wrap img[b-nrz0bbcejv] {
+  width: 200px;
+  height: auto;
+}
+.edit-loker .rounded-circle[b-nrz0bbcejv] {
+  border-radius: 50% !important;
+}
+.edit-loker .card[b-nrz0bbcejv] {
+  -ms-flex-direction: column;
+  background-clip: border-box;
+  background-color: #ffffff;
+  border-radius: 0.2rem;
+  border: 1px solid #e5e9f2;
+  box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.08);
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  min-width: 0;
+  position: relative;
+  word-wrap: break-word;
+}
+.edit-loker .card .card-header[b-nrz0bbcejv] {
+  background-color: #ffffff;
+  color: inherit;
+  padding: 0.7rem 1.25rem;
+}
+.edit-loker .card .card-header:first-child[b-nrz0bbcejv] {
+  border-radius: calc(0.2rem - 1px) calc(0.2rem - 1px) 0 0;
+}
+.edit-loker .card .card-header .card-title[b-nrz0bbcejv] {
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #515357;
+  margin: 0;
+  font-size: 1rem;
+}
+.edit-loker .card-header[b-nrz0bbcejv] {
+  background-color: rgba(33, 40, 50, 0.03);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+  margin-bottom: 0;
+  padding: 1rem 1.35rem;
+}
+.edit-loker .card-header:first-child[b-nrz0bbcejv] {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+.edit-loker .card-image .format[b-nrz0bbcejv] {
+  margin-top: 20px;
+}
+.edit-loker .card-image .btn-upload[b-nrz0bbcejv] {
+  margin-top: 8px;
+  color: red;
+  margin-bottom: 15px;
+}
+.edit-loker .form-control[b-nrz0bbcejv],
+.edit-loker .dataTable-input[b-nrz0bbcejv] {
+  /*        display: block;
+        padding: 0.875rem 1.125rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1;
+        color: #69707a;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #c5ccd6;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.35rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;*/
+}
+.edit-loker .nav-borders[b-nrz0bbcejv] {
+  border: 1px solid red;
+}
+.edit-loker .nav-borders .nav-link.active[b-nrz0bbcejv] {
+  border-bottom-color: #0061f2;
+  color: #0061f2;
+}
+.edit-loker .nav-borders .nav-link[b-nrz0bbcejv] {
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 0.125rem;
+  color: #69707a;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0.5rem;
+}
+.edit-loker .card-kriteria .card-body .kriteria-loker[b-nrz0bbcejv] {
+  margin-bottom: 1rem;
+}
+.edit-loker .card-kriteria .card-body .kriteria-loker p[b-nrz0bbcejv] {
+  color: #797b7c;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+}

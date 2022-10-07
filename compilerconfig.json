@@ -1,0 +1,54 @@
+﻿[
+  {
+    "outputFile": "Pages/Login/AdminLogin.razor.css",
+    "inputFile": "Pages/Login/AdminLogin.razor.less"
+  },
+  {
+    "outputFile": "wwwroot/css/app.css",
+    "inputFile": "wwwroot/css/app.less"
+  },
+  {
+    "outputFile": "Pages/Loker/AdminLoker.razor.css",
+    "inputFile": "Pages/Loker/AdminLoker.razor.less"
+  },
+  {
+    "outputFile": "Pages/Loker/AdminLokerEdit.razor.css",
+    "inputFile": "Pages/Loker/AdminLokerEdit.razor.less"
+  },
+  {
+    "outputFile": "Pages/Loker/AdminQuestion.razor.css",
+    "inputFile": "Pages/Loker/AdminQuestion.razor.less"
+  },
+  {
+    "outputFile": "Pages/Laporan/AdminCalonPelamarPage.razor.css",
+    "inputFile": "Pages/Laporan/AdminCalonPelamarPage.razor.less"
+  },
+  {
+    "outputFile": "Pages/Laporan/AdminHistoryJawaban.razor.css",
+    "inputFile": "Pages/Laporan/AdminHistoryJawaban.razor.less"
+  },
+  {
+    "outputFile": "Pages/Laporan/AdminHistoryJawabanByPelamar.razor.css",
+    "inputFile": "Pages/Laporan/AdminHistoryJawabanByPelamar.razor.less"
+  },
+  {
+    "outputFile": "Pages/Laporan/AdminHistoryJawabanByLokerPage.razor.css",
+    "inputFile": "Pages/Laporan/AdminHistoryJawabanByLokerPage.razor.less"
+  },
+  {
+    "outputFile": "Pages/Laporan/AdminDetailJawabanPage.razor.css",
+    "inputFile": "Pages/Laporan/AdminDetailJawabanPage.razor.less"
+  },
+  {
+    "outputFile": "Pages/Login/AdminEditPassword.razor.css",
+    "inputFile": "Pages/Login/AdminEditPassword.razor.less"
+  },
+  {
+    "outputFile": "Pages/Laporan/AdminHistoryJawabanByLoker.razor.css",
+    "inputFile": "Pages/Laporan/AdminHistoryJawabanByLoker.razor.less"
+  },
+  {
+    "outputFile": "Shared/Admin/AdminNavMobile.razor.css",
+    "inputFile": "Shared/Admin/AdminNavMobile.razor.less"
+  }
+]

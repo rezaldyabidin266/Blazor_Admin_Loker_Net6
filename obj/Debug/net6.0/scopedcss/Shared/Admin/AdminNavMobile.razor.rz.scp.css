@@ -1,0 +1,57 @@
+.navbar[b-ftnpjwchly] {
+  background: #32373d;
+}
+.navbar .nav-mobile-container .off[b-ftnpjwchly] {
+  cursor: pointer;
+  font-size: 12px;
+}
+.navbar .nav-mobile-container .off i[b-ftnpjwchly] {
+  color: white;
+}
+.navbar .nav-mobile-container .navbar-brand[b-ftnpjwchly] {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+.navbar .nav-mobile-container .drop[b-ftnpjwchly] {
+  cursor: pointer;
+}
+.navbar .nav-mobile-container .drop .titik[b-ftnpjwchly] {
+  font-size: 12px;
+  color: white;
+}
+.navbar .nav-mobile-container .drop .dropdown-menu li a[b-ftnpjwchly] {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  font-size: 14px;
+}
+.navbar .nav-mobile-container .drop .dropdown-menu li a i[b-ftnpjwchly] {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.offcanvas[b-ftnpjwchly] {
+  background: #32373d;
+  color: white;
+}
+.offcanvas .offcanvas-header a[b-ftnpjwchly] {
+  color: white;
+}
+.offcanvas .offcanvas-header a i[b-ftnpjwchly] {
+  margin-right: 5px;
+}
+.offcanvas .offcanvas-body .menu li[b-ftnpjwchly] {
+  padding-top: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+.offcanvas .offcanvas-body .menu li a[b-ftnpjwchly] {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.offcanvas .offcanvas-body .menu li a i[b-ftnpjwchly] {
+  margin-right: 12px;
+  font-size: 18px;
+}
+.offcanvas .offcanvas-body .menu hr[b-ftnpjwchly] {
+  margin-bottom: 18px;
+}

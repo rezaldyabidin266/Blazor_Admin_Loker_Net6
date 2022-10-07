@@ -1,0 +1,48 @@
+﻿@page "/adminQuestion/{idLoker:int}"
+@inherits AdminQuestionBase
+
+<PageTitle>Loker Question</PageTitle>
+
+<div class="quest-container">
+    <div class="container-xl px-3 px-sm-4 mt-2 mb-4">
+        <DxTabs ScrollMode="TabsScrollMode.NavButtons" CssClass="mb-4" ActiveTabIndex="1">
+            <DxTab Click="goLokerEdit" Text="Lowongan"></DxTab>
+            <DxTab Click="goQuest" Text="Pertanyaan"></DxTab>
+            <DxTab Click="goHistory" Text="History Jawaban"></DxTab>
+        </DxTabs>
+        <div class="row quest">
+            @foreach (var item in questions.OrderBy(x => x.no))
+            {
+                <div class="col-lg-6">
+                    <div class="card card-quiz">
+                        <div class="card-body">
+                            <div class="card-pertanyaan">
+                                <div class="head d-flex flex-wrap">
+                                    <p class="no">@item.no</p>
+                                    <DxCheckBox CssClass="chk ms-auto"
+                                            CheckType="CheckType.Switch"
+                                            LabelPosition="LabelPosition.Left"
+                                            @bind-Checked="@item.isRequired"
+                                            Enabled="false"
+                                            Alignment="CheckBoxContentAlignment.Default">
+                                        Required:
+                                    </DxCheckBox>
+                                </div>
+                                <p class="quest-text">
+                                   Bentuk: <span class="badge bg-info text-white">@item.bentukIsian</span>
+                                </p>
+                                <p class="quest-text">Pertanyaan:</p>
+                                <p class="quest-data">@item.pertanyaan</p>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

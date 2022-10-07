@@ -1,0 +1,167 @@
+﻿@page "/historyJawabanByLoker/{idLoker:int}"
+@using BlazorAdminLoker2022.Resource.Laporan
+@inherits AdminHistoryJawabanByLokerBase
+
+<style>
+    .columnCalonPelamar {
+        height: 650px;
+    }
+
+    @@media (max-width: 1399.98px) {
+    }
+
+    @@media (max-width: 1199.98px) {
+    }
+
+    @@media (max-width: 991.98px) {
+    }
+
+    @@media (max-width: 767.98px) {
+    }
+
+    @@media (max-width: 575.98px) {
+        .columnCalonPelamar {
+            height: 570px;
+        }
+    }</style>
+
+<PageTitle>History Jawaban By Loker</PageTitle>
+
+<div class="quest-container">
+    <div class="container-xl px-3 px-sm-4 mt-2 mb-4">
+        <DxTabs ScrollMode="TabsScrollMode.NavButtons" CssClass="mb-4" ActiveTabIndex="2">
+            <DxTab Click="goLokerEdit" Text="Lowongan"></DxTab>
+            <DxTab Click="goQuest" Text="Pertanyaan"></DxTab>
+            <DxTab Click="goHistory" Text="History Jawaban"></DxTab>
+        </DxTabs>
+        <div class="row quest">
+            <div class="col-lg-12">
+                <div class="d-flex flex-wrap mb-2">
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained"
+                               Title="History Jawaban By Loker">
+                        <Items>
+                            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                                           IconCssClass="fas fa-line-columns"
+                                           Text="Column Chooser"
+                                           RenderStyle="ButtonRenderStyle.Secondary"
+                                           CssClass="column-chooser-button"
+                                           Click="@OnClick" />
+                        </Items>
+                    </DxToolbar>
+                </div>
+                <DxGrid @ref="@Grid" Data="@historyJawaban"
+                        PagerNavigationMode="PagerNavigationMode.Auto"
+                        ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                        PageSize="30"
+                        DetailRowDisplayMode="@ShowMasterDetail"
+                        ShowFilterRow="@ShowFilterRow"
+                        CssClass="columnCalonPelamar"
+                        AutoCollapseDetailRow="true">
+                    <Columns>
+                        <DxGridDataColumn FieldName="headerJawabanId" Caption="headerJawabanId" Visible="false" />
+                        <DxGridDataColumn FieldName="lowonganId" Caption="lowonganId" Visible="false" />
+                        <DxGridDataColumn FieldName="namaPelamar" Caption="Nama" />
+                        <DxGridDataColumn FieldName="judulLowongan" Caption="Lowongan" Visible="@VisibleResponsive" />
+                        <DxGridDataColumn FieldName="statusLamaran" Caption="Status" Visible="@VisibleResponsive" />
+                        <DxGridDataColumn FieldName="calonPelamarId" Caption="calonPelamarId" Visible="false" />
+                        <DxGridDataColumn FieldName="hasilInterview" Caption="Interview" Visible="@VisibleResponsive" />
+                        <DxGridDataColumn FieldName="noTlp" Caption="No Tlpn" Visible="@VisibleResponsive" />
+                        <DxGridDataColumn FieldName="tglApply" Caption="Tgl Apply" DisplayFormat="D" Visible="@VisibleResponsive" />
+                        <DxGridDataColumn FieldName="dateCreated" Caption="dateCreated" Visible="false" />
+                        <DxGridDataColumn FieldName="dateUpdate" Caption="dateUpdate" Visible="false" />
+                        <DxGridDataColumn FieldName="userCreated" Caption="userCreated" Visible="false" />
+                        <DxGridDataColumn FieldName="userUpdate" Caption="userUpdate" Visible="false" />
+                        <DxGridDataColumn Visible="true" Width="70px" Caption="Opsi" TextAlignment="GridTextAlignment.Center">
+                            <CellDisplayTemplate>
+                                <a href="javascript:;" class="h3" @onclick="() => goDetailJawaban((AdminHistoryJawabanByLokerClass)context.DataItem)"><i class="material-icons md-24 text-info">move_up</i></a>
+                            </CellDisplayTemplate>
+                        </DxGridDataColumn>
+                    </Columns>
+                    <ColumnHeaderCaptionTemplate>
+                        <span title="Click the header to sort data by this column. Drag and drop the header to change the column's position">
+                            @context.Caption
+                        </span>
+                    </ColumnHeaderCaptionTemplate>
+                    <DetailRowTemplate>
+                        @{
+                            var dataContext = (AdminHistoryJawabanByLokerClass)context.DataItem;
+                            <div class="master-detail">
+                                <h6>Detail Data</h6>
+                                <p><span>Nama: </span> @dataContext.namaPelamar</p>
+                                <p><span>No Tlpn : </span>@dataContext.noTlp</p>
+                                <p><span>Lowongan: </span>@dataContext.judulLowongan</p>
+                                <p><span>Status : </span>@dataContext.statusLamaran</p>
+                                <p><span>Interview : </span>@dataContext.hasilInterview</p>
+                                <p><span>Tgl Apply: </span>@dataContext.tglApply.ToString("dd MMMM yyyy")</p>
+                            </div>
+                        }
+                    </DetailRowTemplate>
+                </DxGrid>
+            </div>
+            @*           <DxDataGrid DataAsync="@GetAsyncHistoryJawabanByLoker(historyJawaban)"
+                AllowColumnDragDrop="true"
+                VerticalScrollBarMode="ScrollBarMode.Auto"
+                PagerNavigationMode="PagerNavigationMode.Auto"
+                PagerPageSizeSelectorVisible="true"
+                PagerAllDataRowsItemVisible="true"
+                ColumnResizeMode="DataGridColumnResizeMode.NextColumn"
+                AutoCollapseDetailRow="true"
+                ShowDetailRow="@masterDetail"
+                PagerAllowedPageSizes=@(new int[] {10,50,100})
+                PageSize="30"
+                VerticalScrollableHeight="500"
+                HorizontalScrollBarMode="ScrollBarMode.Auto"
+                ShowFilterRow="@ShowFilterRow">
+                <HeaderTemplate>
+                <DxToolbar CssClass="Toolbal-fontCustom" Title="History by Loker" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+                <DxToolbarItem @bind-Checked="@ShowFilterRow"
+                GroupName="ShowFilterRow"
+                Tooltip="Filter Row"
+                Text="Filter Row"
+                IconCssClass="fas fa-filter"
+                Alignment="ToolbarItemAlignment.Right"
+                CssClass="btn-custom"
+                RenderStyle="ButtonRenderStyle.Warning"
+                BeginGroup="true" />
+                <DxDataGridColumnChooserToolbarItem Alignment="ToolbarItemAlignment.Right" />
+                </DxToolbar>
+                </HeaderTemplate>
+                <Columns>
+                <DxDataGridColumn Field="headerJawabanId" Caption="headerJawabanId" Visible="false" />
+                <DxDataGridColumn Field="lowonganId" Caption="lowonganId" Visible="false" />
+                <DxDataGridColumn Field="namaPelamar" Caption="Nama" />
+                <DxDataGridColumn Field="judulLowongan" Caption="Lowongan" Visible="@VisibleResponsive" />
+                <DxDataGridColumn Field="statusLamaran" Caption="Status" Visible="@VisibleResponsive" />
+                <DxDataGridColumn Field="calonPelamarId" Caption="calonPelamarId" Visible="false" />
+                <DxDataGridColumn Field="hasilInterview" Caption="Interview" Visible="@VisibleResponsive" />
+                <DxDataGridColumn Field="noTlp" Caption="No Tlpn" Visible="@VisibleResponsive" />
+                <DxDataGridDateEditColumn Field="tglApply" Caption="Tgl Apply" DisplayFormat="D" Width="280px" Visible="@VisibleResponsive" />
+                <DxDataGridColumn Field="dateCreated" Caption="dateCreated" Visible="false" />
+                <DxDataGridColumn Field="dateUpdate" Caption="dateUpdate" Visible="false" />
+                <DxDataGridColumn Field="userCreated" Caption="userCreated" Visible="false" />
+                <DxDataGridColumn Field="userUpdate" Caption="userUpdate" Visible="false" />
+                <DxDataGridColumn Visible="true" Width="70px" Caption="Opsi" TextAlignment="DataGridTextAlign.Center">
+                <DisplayTemplate>
+                <a href="javascript:;" class="h3" @onclick="() => goDetailJawaban(context as AdminHistoryJawabanByLokerClass)"><i class="material-icons md-24 text-info">move_up</i></a>
+                </DisplayTemplate>
+                </DxDataGridColumn>
+                </Columns>
+                <DetailRowTemplate Context="dataContext">
+                <div class="master-detail">
+                <h6>Detail Data</h6>
+                <p><span>Nama: </span> @dataContext.namaPelamar</p>
+                <p><span>No Tlpn : </span>@dataContext.noTlp</p>
+                <p><span>Lowongan: </span>@dataContext.judulLowongan</p>
+                <p><span>Status : </span>@dataContext.statusLamaran</p>
+                <p><span>Interview : </span>@dataContext.hasilInterview</p>
+                <p><span>Tgl Apply: </span>@dataContext.tglApply.ToString("dd MMMM yyyy")</p>
+                </div>
+                </DetailRowTemplate>
+                </DxDataGrid>*@
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

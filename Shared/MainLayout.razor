@@ -1,0 +1,139 @@
+﻿@using BlazorAgentVs2022.Utility
+@inherits LayoutComponentBase
+@inject IJSRuntime js
+@inject AuthenticationStateProvider authenticationStateProvider      
+@inject NavigationManager navigationManager
+<style>
+    .wrapper {
+        width: 100%;
+    }
+
+    #content {
+        width: 100%;
+        padding: 0;
+        min-height: 100vh;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        background: #F9F9F9;
+        padding-top: 3rem;
+    }
+
+    .nav-mobile {
+        display: none !important;
+    }
+
+    .toolbar {
+    }
+
+    .button-kembali {
+        right: 20px;
+        position: absolute;
+        top: 20px;
+    }
+
+    .button-titik {
+        right: 120px;
+        position: absolute;
+        top: 25px;
+        cursor: pointer;
+    }
+
+    .titik {
+        font-size: 15px;
+    }
+
+    .dropdown-menu li a {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        letter-spacing: .1px;
+        font-size: 14px;
+    }
+
+        .dropdown-menu li a i {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+    @@media (max-width: 1399.98px) {
+    }
+
+    @@media (max-width: 1199.98px) {
+    }
+
+
+    @@media (max-width: 991.98px) {
+    }
+
+    @@media (max-width: 767.98px) {
+        .nav-sidebar {
+            display: none !important;
+        }
+
+        .toolbar {
+            display: none !important;
+        }
+
+        .nav-mobile {
+            display: block !important;
+        }
+
+        #content {
+            padding-top: 0;
+        }
+    }
+
+    @@media (max-width: 575.98px) {
+    }
+</style>
+
+<div class="wrapper d-flex align-items-stretch">
+    <div class="nav-sidebar">
+        <BlazorAdminLoker2022.Shared.Admin.AdminSidebar></BlazorAdminLoker2022.Shared.Admin.AdminSidebar>
+    </div>
+
+    <div id="content" class="">
+        <div class="nav-mobile">
+            <BlazorAdminLoker2022.Shared.Admin.AdminNavMobile></BlazorAdminLoker2022.Shared.Admin.AdminNavMobile>
+        </div>
+        <div class="toolbar">
+            <div class="button-titik">
+                <div class="drop dropstart">
+                    <a class="titik" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-ellipsis-h fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item"><i class="fas fa-question-circle"></i>Help Us</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a href="javascript:void(0);" @onclick="goLogout" class="dropdown-item"><i class="fas fa-sign-out"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="button-kembali">
+                <DxButton Text="Kembali"
+                          onclick="history.back()"
+                          IconCssClass="fas fa-undo fa-sm me-1"
+                          RenderStyle="ButtonRenderStyle.Dark"
+                          SizeMode="SizeMode.Small">
+                </DxButton>
+            </div>
+
+        </div>
+
+        @Body
+
+    </div>
+</div>
+
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await js.InvokeVoidAsync("navbar_sidebar");
+    }
+    protected void goLogout()
+        {
+            ((MyAuthenticationProvider)authenticationStateProvider).MarkUserAsLogout();
+            navigationManager.NavigateTo("/");
+        }
+}

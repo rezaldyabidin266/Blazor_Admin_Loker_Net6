@@ -1,0 +1,31 @@
+.quest-container .quest .card-quiz[b-q1b3abdcvq] {
+  margin-bottom: 12px;
+  word-wrap: break-word;
+}
+.quest-container .quest .card-quiz .card-body .card-pertanyaan[b-q1b3abdcvq] {
+  letter-spacing: 0.1px;
+  line-height: 24px;
+  color: #202124;
+  font-family: 'Roboto', sans-serif;
+}
+.quest-container .quest .card-quiz .card-body .card-pertanyaan .head .no[b-q1b3abdcvq] {
+  font-size: 1rem;
+  color: #232c33;
+}
+.quest-container .quest .card-quiz .card-body .card-pertanyaan .quest-bentuk[b-q1b3abdcvq] {
+  font-weight: 400;
+  color: black;
+}
+.quest-container .quest .card-quiz .card-body .card-pertanyaan .quest-text[b-q1b3abdcvq] {
+  margin: 0;
+  margin-bottom: 3px;
+  font-weight: 600;
+  color: #495057;
+}
+.quest-container .quest .card-quiz .card-body .card-pertanyaan .quest-data[b-q1b3abdcvq] {
+  margin-bottom: 0;
+}
+.quest-container .quest .card-quiz .card-body .card-pertanyaan hr[b-q1b3abdcvq] {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}

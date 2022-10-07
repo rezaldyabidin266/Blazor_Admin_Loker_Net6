@@ -1,0 +1,84 @@
+﻿@page "/detailJawaban/{loker}/{headerJawabanId:int}"
+@inherits AdminDetailJawabanPageBase
+
+<style>
+    .text-area-custom {
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,.12);
+    }
+
+        .text-area-custom:focus {
+            box-shadow: none;
+        }
+
+    .border-none {
+        border: none;
+    }
+
+    .form-custom:after {
+        display: block;
+        content: '';
+        border-bottom: solid 2px #019fb6;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+
+    .form-custom:hover:after {
+        transform: scaleX(1);
+    }
+
+    .validation-message {
+        color: red;
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<PageTitle>Detail Jawaban</PageTitle>
+
+<div class="detail-jawaban-container">
+    <div class="detail-jawaban">
+        <div class="container">
+            <div class="row display">
+                <div class="col-md-9 mx-auto">
+                    <div class="head d-flex flex-wrap align-items-center">
+                        <h4>Detail Jawaban</h4>
+                        <DxButton Text="Kembali"
+                                  onclick="history.back()"
+                                  IconCssClass="fas fa-angle-double-left fa-sm me-1"
+                                  CssClass="ms-auto"
+                                  RenderStyle="ButtonRenderStyle.Secondary"
+                                  SizeMode="SizeMode.Small">
+                        </DxButton>
+                    </div>
+                    @foreach (var item in responJawaban)
+                    {
+                        <div class="card card-quiz">
+                            <div class="card-body">
+                                <div class="card-pertanyaan">
+                                    @item.pertanyaan<span class="star">*</span>
+                                </div>
+                                <div class="card-jawaban">
+                                    <DxTextBox NullText="Jawaban Anda"
+                                           Text="@item.jawaban"
+                                           CssClass="form-custom"
+                                           InputCssClass="text-area-custom"
+                                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Never" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="peringatan">
+                        <p>Hanya bisa membaca Formulir.</p>
+                    </div>
+                    <div class="copywriting">
+                        <p><span>@loker</span> Formulir</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

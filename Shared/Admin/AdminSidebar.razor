@@ -1,0 +1,336 @@
+﻿@inject NavigationManager NavigationManager
+@inherits AdminSidebarBase
+<style>
+
+    @@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+
+    a {
+        text-decoration: none;
+    }
+
+    .img {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .img-logo{
+        width:170px !important;
+    }
+
+    #sidebar {
+        min-width: 300px;
+        max-width: 300px;
+        background: #32373d;
+        color: #fff;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        position: relative;
+        height: 100%;
+        font-family: "Poppins", Arial, sans-serif;
+    }
+
+    .custom-menu {
+        /*  border:1px solid red;*/
+    }
+
+    .btn-geser {
+    }
+
+
+    .menu-right {
+        position:absolute;
+        z-index:10;
+        color:red;
+    }
+
+
+    #sidebar .h6 {
+        color: #fff;
+    }
+
+    #sidebar.active {
+        margin-left: -300px;
+    }
+
+        /*   #sidebar.close {
+                            display: none;
+                        }*/
+
+        #sidebar.active .custom-menu {
+            margin-right: -50px;
+        }
+
+        #sidebar.active .btn.btn-primary:before {
+            content: "\f0c9";
+            font-family: "Font Awesome 5 Pro";
+            right: 2px !important;
+            font-weight: 900;
+        }
+
+        #sidebar.active .btn.btn-primary:after {
+            display: none;
+        }
+
+    #sidebar h1 {
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+        #sidebar h1 .logo {
+            color: #fff;
+            display: block;
+            padding: 10px 30px;
+            background: #2f89fc;
+        }
+
+    #sidebar ul.components {
+        padding: 0;
+    }
+
+    #sidebar ul li {
+        font-size: 16px;
+    }
+
+        #sidebar ul li > ul {
+            margin-left: 10px;
+        }
+
+            #sidebar ul li > ul li {
+                font-size: 14px;
+            }
+
+        #sidebar ul li a {
+            padding: 15px 30px;
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+            #sidebar ul li a span.notif {
+                position: relative;
+            }
+
+                #sidebar ul li a span.notif small {
+                    position: absolute;
+                    top: -3px;
+                    bottom: 0;
+                    right: -3px;
+                    width: 12px;
+                    height: 12px;
+                    content: '';
+                    background: red;
+                    border-radius: 50%;
+                    font-family: "Poppins", Arial, sans-serif;
+                    font-size: 8px;
+                }
+
+            #sidebar ul li a:hover {
+                color: #fff;
+                background: #2f89fc;
+                border-bottom: 1px solid #2f89fc;
+            }
+
+        #sidebar ul li.active > a {
+            background: transparent;
+            color: #fff;
+        }
+
+            #sidebar ul li.active > a:hover {
+                background: #2f89fc;
+                border-bottom: 1px solid #2f89fc;
+            }
+
+    @@media (max-width: 991.98px) {
+        #sidebar {
+            margin-left: -300px;
+        }
+
+            #sidebar.active {
+                margin-left: 0;
+            }
+
+            #sidebar .custom-menu {
+                margin-right: -60px !important;
+                top: 10px !important;
+            }
+    }
+
+    #sidebar .custom-menu {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: -20px;
+        margin-right: -35px;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+    }
+
+    @@media (prefers-reduced-motion: reduce) {
+        #sidebar .custom-menu {
+            -webkit-transition: none;
+            -o-transition: none;
+            transition: none;
+        }
+    }
+
+    #sidebar .custom-menu .btn.btn-primary {
+        border-color: transparent;
+        position: relative;
+        width: 30px;
+        height: 30px;
+    }
+
+        #sidebar .custom-menu .btn.btn-primary:after,
+        #sidebar .custom-menu .btn.btn-primary:before {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+        }
+
+        #sidebar .custom-menu .btn.btn-primary:after {
+            content: '\f33e';
+            font-family: "Font Awesome 5 Pro";
+            font-weight: 900;
+            left: 2px;
+        }
+
+    .bg-wrap {
+        width: 100%;
+        position: relative;
+        z-index: 0;
+        background:#2e3338!important;
+    }
+
+        .bg-wrap:after {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: '';
+            background: #000;
+            opacity: .3;
+        }
+
+        .bg-wrap .user-logo .img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            margin-bottom: 5px;
+        }
+
+        .bg-wrap .user-logo h3 {
+            color: #fff;
+             font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            letter-spacing:1px;
+        }
+
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+
+    @@media (max-width: 1399.98px) {
+    }
+
+    @@media (max-width: 1199.98px) {
+    }
+
+
+    @@media (max-width: 991.98px) {
+        .sidebarCollapse span {
+            display: none;
+        }
+    }
+
+    @@media (max-width: 767.98px) {
+    }
+
+    @@media (max-width: 575.98px) {
+    }
+
+</style>
+
+
+<!-- Navbar > 780px-->
+
+<nav id="sidebar">
+    <div class="custom-menu">
+        <button type="button" class="sidebarCollapse btn-geser btn btn-primary">
+        </button>
+    </div>
+    <div class="img bg-wrap text-center py-4">
+        <div class="user-logo">
+            <div class="img img-logo" style="background-image: url(image/logo/logo_brasil2.png);"></div>
+            <h3>@user</h3>
+        </div>
+    </div>
+    <ul class="list-unstyled components mb-5">
+        <li class="active">
+            <a @onclick="goHome"><span class="fa fa-home me-3 fa-sm"></span>Home</a>
+        </li>
+        <li>
+            <a @onclick="goCalonPelamar"><span class="fas fa-users me-3 fa-sm"></span>Calon Pelamar</a>
+        </li>
+        <li>
+            <a @onclick="goEditPw"><span class="fas fa-cog me-3 fa-sm"></span>Edit Password</a>
+        </li>
+        @*   <li>
+            <a data-bs-toggle="collapse" data-bs-target="#submenu-1" aria-expanded="true" aria-controls="collapseOne">
+            <span class="fa fa-gift me-3  fa-sm "></span> gift code
+            </a>
+            <ul class="list-unstyled collapse show" id="submenu-1" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <li class="active">
+            <a @onclick="goHome"><span class="fa fa-home me-3  fa-sm"></span>Home</a>
+            </li>
+            </ul>
+            </li>*@
+    </ul>
+</nav>
+
+@code {
+
+    protected void goHome()
+    {
+        NavigationManager.NavigateTo("/loker");
+    }
+
+    protected void goLogin()
+    {
+        NavigationManager.NavigateTo("/adminLogin");
+    }
+    protected void goCalonPelamar()
+    {
+        NavigationManager.NavigateTo("/calonPelamar");
+    }
+    protected void goHistoryJawaban()
+    {
+        NavigationManager.NavigateTo("/allHistoryJawaban");
+    }
+    protected void goEditPw()
+    {
+        NavigationManager.NavigateTo("/editPassword");
+    }
+    protected override void OnInitialized()
+    {
+    }
+}

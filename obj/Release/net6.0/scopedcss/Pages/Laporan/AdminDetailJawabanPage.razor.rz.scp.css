@@ -1,0 +1,83 @@
+.detail-jawaban-container .detail-jawaban[b-k96qm9i2t4] {
+  background: #F9F9F9;
+  /*        padding-top: 20px;
+        padding-bottom: 20px;*/
+  padding-left: 0;
+  padding-right: 0;
+}
+.detail-jawaban-container .detail-jawaban .display .head h4[b-k96qm9i2t4] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: #515357;
+}
+.detail-jawaban-container .detail-jawaban .display .card-quiz[b-k96qm9i2t4] {
+  margin-bottom: 12px;
+  word-wrap: break-word;
+}
+.detail-jawaban-container .detail-jawaban .display .card-quiz .card-body .card-pertanyaan[b-k96qm9i2t4] {
+  letter-spacing: 0.1px;
+  line-height: 24px;
+  color: #202124;
+}
+.detail-jawaban-container .detail-jawaban .display .card-quiz .card-body .card-pertanyaan span[b-k96qm9i2t4] {
+  color: #d93025;
+  padding-left: 0.25em;
+}
+.detail-jawaban-container .detail-jawaban .display .card-quiz .card-body .card-jawaban[b-k96qm9i2t4] {
+  padding-top: 14px;
+  position: relative;
+}
+.detail-jawaban-container .detail-jawaban .display .card-quiz .card-body .card-jawaban .custom-radio .form-check[b-k96qm9i2t4] {
+  padding-bottom: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+.detail-jawaban-container .detail-jawaban .display .card-quiz .card-body .card-jawaban .custom-radio .form-check .form-check-input[b-k96qm9i2t4] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+.detail-jawaban-container .detail-jawaban .display .card-quiz .card-body .card-jawaban .custom-radio .form-check .form-check-label[b-k96qm9i2t4] {
+  font-family: 'Lato', sans-serif;
+  color: #515357;
+  font-weight: normal;
+  margin-top: 2px;
+  margin-left: 0.75em;
+}
+.detail-jawaban-container .detail-jawaban .display .peringatan p[b-k96qm9i2t4] {
+  font-family: 'Roboto Slab', serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 16px;
+  color: #70757a;
+  color: rgba(0, 0, 0, 0.66);
+  margin: 0;
+  margin-top: 8px;
+}
+.detail-jawaban-container .detail-jawaban .display .copywriting[b-k96qm9i2t4] {
+  margin-top: 24px;
+  margin-right: 0px;
+  margin-bottom: 24px;
+  margin-left: 0px;
+  text-align: center;
+}
+.detail-jawaban-container .detail-jawaban .display .copywriting p[b-k96qm9i2t4] {
+  color: black;
+  opacity: 0.55;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 22.1px;
+}
+.detail-jawaban-container .detail-jawaban .display .copywriting p span[b-k96qm9i2t4] {
+  color: #6C6C6E;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}

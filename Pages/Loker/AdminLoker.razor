@@ -1,0 +1,215 @@
+﻿@inherits AdminLokerBase
+
+<PageTitle>Home</PageTitle>
+
+<section class="admin-loker">
+@*    <div class="container-fluid">
+        <div class="row headers">
+            <div class="col-12">
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+    </div>*@
+    <div class="container mt-4 mb-4">
+        <div class="row counters">
+            <div class="col-xl-3 col-lg-6">
+                <div class="card l-bg-green-dark">
+                    <div class="card-statistic-3 p-4">
+                        <div class="card-icon card-icon-large"><i class="fas fa-briefcase"></i></div>
+                        <div class="mb-4">
+                            <h5 class="card-title mb-0">Total Lowongan</h5>
+                        </div>
+                        <div class="row align-items-center mb-2 d-flex">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center mb-0">
+                                    ● @adminAllLoker.Count
+                                </h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <span>10% <i class="fa fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+                        <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                            <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6">
+                <div class="card l-bg-orange-dark">
+                    <div class="card-statistic-3 p-4">
+                        <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                        <div class="mb-4">
+                            <h5 class="card-title mb-0">Calon Pelamar</h5>
+                        </div>
+                        <div class="row align-items-center mb-2 d-flex">
+                            <div class="col-8">
+                                <h2 class="d-flex align-items-center mb-0">
+                                    ● @calonPelamar.Count
+                                </h2>
+                            </div>
+                            <div class="col-4 text-right">
+                                <span>2.5% <i class="fa fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+                        <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                            <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-6">
+                @*                <div class="card l-bg-cherry">
+                    <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fas fa-address-card"></i></div>
+                    <div class="mb-4">
+                    <h5 class="card-title mb-0">Jumlah Lowongan</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                    <div class="col-8">
+                    <h2 class="d-flex align-items-center mb-0">
+                    @adminAllLoker.Count
+                    </h2>
+                    </div>
+                    <div class="col-4 text-right">
+                    <span>1% <i class="fa fa-arrow-up"></i></span>
+                    </div>
+                    </div>
+                    </div>
+                    </div>*@
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                @*          <div class="card l-bg-blue-dark">
+                    <div class="card-statistic-3 p-4">
+                    <div class="card-icon card-icon-large"><i class="fas fa-users"></i></div>
+                    <div class="mb-4">
+                    <h5 class="card-title mb-0">Calon Pelamar</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                    <div class="col-8">
+                    <h2 class="d-flex align-items-center mb-0">
+                    @calonPelamar.Count
+                    </h2>
+                    </div>
+                    <div class="col-4 text-right">
+                    <span>1% <i class="fa fa-arrow-up"></i></span>
+                    </div>
+                    </div>
+                    </div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row lokers">
+            <div class="col-lg-8 col-md-12">
+                @foreach (var item in adminAllLoker.OrderBy(x => x.idLoker))
+                {
+                    <div class="card b-1 hover-shadow mb-20">
+                        <div class="row card-body ps-4 pe-5">
+                            <div class="col-md-2 col-12 d-flex justify-content-center justify-content-md-start">
+                                <img class="avatar avatar-xl radius" src="@imageIlustrasi[item.idLoker]" alt="...">
+                            </div>
+                            <div class="col-md-9 col-12 p-0 pt-1 ">
+                                <div class="mb-2">
+                                    <span class="fs-20 pr-16 judul">@item.judul</span>
+                                </div>
+                                @{
+                                    const int MaxLength = 5;
+                                    string subsKeterangan;
+                                    subsKeterangan = item.keterangan.Substring(0, Math.Min(100, item.keterangan.Length));
+                                    <small class="ls-1 keterangan">@subsKeterangan....</small>
+                                }
+                            </div>
+                            <div class="col-md-1 col-12 p-0 mt-1">
+                                @if (item.isOpen != true)
+                                {
+                                    <span class="badge bg-danger mb-12">Inactive</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-success mb-12">Active</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="btn-action d-block d-sm-none">
+                            <DxButton Text="Share"
+                                  RenderStyle="ButtonRenderStyle.Warning"
+                                  SizeMode="SizeMode.Small"
+                                  IconCssClass="fas fa-share me-1"
+                                  Click="() => shareLink(item.idLoker)"
+                                  RenderStyleMode="ButtonRenderStyleMode.Contained">
+                            </DxButton>
+                            <DxButton Text="Edit"
+                                  RenderStyle="ButtonRenderStyle.Secondary"
+                                  SizeMode="SizeMode.Small"
+                                  IconCssClass="fas fa-edit me-1"
+                                  Click="() => goEdit(item.idLoker)"
+                                  RenderStyleMode="ButtonRenderStyleMode.Contained">
+                            </DxButton>
+                            <DxButton Text="Lihat"
+                                  RenderStyle="ButtonRenderStyle.Info"
+                                  SizeMode="SizeMode.Small"
+                                  Click="() => goWeb(item.idLoker)"
+                                  IconCssClass="fas fa-eye me-1"
+                                  RenderStyleMode="ButtonRenderStyleMode.Contained">
+                            </DxButton>
+                        </div>
+                        <footer class="card-footer flexbox align-items-center">
+                            <div>
+                                <strong>
+                                    Tanggal Dibuat
+                                </strong>
+                                <span>----</span>
+                            </div>
+                            <div class="card-hover-show d-none d-sm-block">
+                                <DxButton Text="Share"
+                                      RenderStyle="ButtonRenderStyle.Warning"
+                                      SizeMode="SizeMode.Small"
+                                      IconCssClass="fas fa-share me-1"
+                                      Click="() => shareLink(item.idLoker)"
+                                      RenderStyleMode="ButtonRenderStyleMode.Contained">
+                                </DxButton>
+                                <DxButton Text="Edit"
+                                      RenderStyle="ButtonRenderStyle.Secondary"
+                                      SizeMode="SizeMode.Small"
+                                      IconCssClass="fas fa-edit me-1"
+                                      Click="() => goEdit(item.idLoker)"
+                                      RenderStyleMode="ButtonRenderStyleMode.Contained">
+                                </DxButton>
+                                <DxButton Text="Lihat"
+                                      RenderStyle="ButtonRenderStyle.Info"
+                                      SizeMode="SizeMode.Small"
+                                      Click="() => goWeb(item.idLoker)"
+                                      IconCssClass="fas fa-eye me-1"
+                                      RenderStyleMode="ButtonRenderStyleMode.Contained">
+                                </DxButton>
+                            </div>
+                        </footer>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-4 col-md-12 sub-right">
+                <!-- CUSTOM BLOCKQUOTE -->
+                <blockquote @onclick="refreshMotivasi" class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <div class="blockquote-custom-icon bg-info shadow-sm">
+                        <i class="fa fa-quote-left text-white"></i>
+                    </div>
+                    <p class="mb-0">
+                        @kalimatMotivasi
+                    </p>
+                </blockquote><!-- END -->
+                <div>
+                    <img @onclick="refreshMotivasi" class="img-thumbnail rounded img-fluid shadow" src="@gambarMotivasi" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+
+}
+

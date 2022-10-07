@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\VisualStudio2020\Publish\Admin_Loker\EsBrasilAdminLoker_Blazor_2022</_PublishTargetUrl>
+    <History>True|2022-07-20T03:48:12.5768156Z;False|2022-07-20T10:47:37.6348103+07:00;True|2022-07-19T15:06:59.9462628+07:00;True|2022-07-19T13:55:04.8638063+07:00;True|2022-07-19T11:40:12.6541863+07:00;True|2022-07-19T10:36:28.8185675+07:00;True|2022-06-22T16:28:35.0386598+07:00;True|2022-06-14T14:33:35.4653641+07:00;True|2022-06-14T11:41:54.1289269+07:00;</History>
+  </PropertyGroup>
+</Project>

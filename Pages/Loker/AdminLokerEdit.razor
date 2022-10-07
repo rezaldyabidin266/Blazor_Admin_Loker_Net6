@@ -1,0 +1,212 @@
+﻿@page "/lokerEdit/{idLoker:int}"
+@inherits AdminLokerEditBase
+
+<PageTitle>Edit Loker</PageTitle>
+
+<style>
+    .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+        background-color: #5f368d !important;
+    }
+
+    .custom-switch .custom-control-label::after {
+        -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.3) !important;
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,.3) !important;
+        background-color: #fff !important;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::before {
+        color: #fff !important;
+        border-color: #5f368d !important;
+        background-color: #5f368d !important;
+    }
+
+    .custom-switch .custom-control-label::before {
+        height: .875rem;
+        top: calc(.16rem + 2px);
+        background-color: #000 !important;
+        border-color: #000 !important;
+        opacity: .3 !important;
+    }
+    
+</style>
+
+<div class="edit-loker">
+    <div class="container-xl px-3 px-sm-4 mt-2 mb-4">
+        <DxTabs ScrollMode="TabsScrollMode.NavButtons" CssClass="mb-4" ActiveTabIndex="0">
+            <DxTab Click="goLokerEdit" Text="Lowongan"></DxTab>
+            <DxTab Click="goQuest" Text="Pertanyaan"></DxTab>
+            <DxTab Click="goHistory" Text="History Jawaban"></DxTab>
+        </DxTabs>
+        <div class="row">
+            <div class="col-sm-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-3">
+                    <div class="card-header">
+                        <div class="card-title">
+                            Gambar Ilustrasi
+                        </div>
+                    </div>
+                    <div class="card-body card-image">
+                        <!-- Profile picture image-->
+                        <div class="img-wrap">
+                            <img class="img-thumbnail rounded img-fluid shadow" src="@ilustrasiApi" alt="gambarKosong">
+                        </div>
+                        <!-- Profile picture help block-->
+                        <div class="format small text-muted">Format JPG, PNG, JPEG</div>
+                        <!-- Profile picture upload button-->
+                        <div class="btn-upload">
+                            <button id="buttonUploadIlustrasi" class="btn btn-sm btn-primary" type="button">Upload Ilustrasi</button>
+                        </div>
+                        <DxUpload Name="MyFile"
+                                  Visible="@UploadVisible"
+                                  ExternalSelectButtonCssSelector="#buttonUploadIlustrasi"
+                                  ExternalDropZoneCssSelector="#DropZoneUploadIlustrasi"
+                                  MaxFileSize="15000000"
+                                  ExternalDropZoneDragOverCssClass="bg-light border-secondary text-dark"
+                                  UploadUrl="@GetUploadUrl(apiUploadIlustrasi)"
+                                  SelectedFilesChanged="@SelectedFilesChangedAwal"
+                                  FileUploadStart="@SettingHeaderUpload"
+                                  FileUploadError="@ErrorHandling"
+                                  CssClass="w-100"
+                                  AllowMultiFileUpload="true"
+                                  ShowFileList="false"
+                                  FileUploaded="@UploadSuksesIlustrasi"
+                                  AllowedFileExtensions="@(new List<string> { ".jpg", ".jpeg", ".png" })"
+                                  AcceptedFileTypes="@(new List<string> { ".jpg", ".jpeg", ".png" })">
+                        </DxUpload>
+                    </div>
+                </div>
+
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">
+                        <div class="card-title">
+                            Gambar Background
+                        </div>
+                    </div>
+                    <div class="card-body card-image">
+                        <!-- Profile picture image-->
+                        <div class="img-wrap">
+                            <img class="img-thumbnail rounded img-fluid shadow" src="@backgroundApi" alt="">
+                        </div>
+                        <!-- Profile picture help block-->
+                        <div class="small text-muted format">Format JPG, PNG, JPEG</div>
+                        <!-- Profile picture upload button-->
+                        <div class="btn-upload">
+                            <button id="buttonUploadBackground" class="btn btn-sm btn-primary" type="button">Upload Image</button>
+                        </div>
+                        <DxUpload Name="MyFile"
+                                  Visible="@UploadVisible"
+                                  ExternalSelectButtonCssSelector="#buttonUploadBackground"
+                                  ExternalDropZoneCssSelector="#DropZoneUploadIlustrasi"
+                                  MaxFileSize="15000000"
+                                  ExternalDropZoneDragOverCssClass="bg-light border-secondary text-dark"
+                                  UploadUrl="@GetUploadUrl(apiUploadBackground)"
+                                  SelectedFilesChanged="@SelectedFilesChangedAwal"
+                                  FileUploadStart="@SettingHeaderUpload"
+                                  FileUploadError="@ErrorHandling"
+                                  CssClass="w-100"
+                                  AllowMultiFileUpload="true"
+                                  ShowFileList="false"
+                                  FileUploaded="@UploadSuksesBackground"
+                                  AllowedFileExtensions="@(new List<string> { ".jpg", ".jpeg", ".png" })"
+                                  AcceptedFileTypes="@(new List<string> { ".jpg", ".jpeg", ".png" })">
+                        </DxUpload>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-8">
+                <EditForm EditContext="updateLokerContext">
+                    <DataAnnotationsValidator />
+                    <!-- Account details card-->
+                    <div class="card mb-4">
+                        <div class="card-header d-flex flex-wrap">
+                            Loker Details
+                            <DxCheckBox CssClass="text-end ms-auto"
+                                        CheckType="CheckType.Switch"
+                                        LabelPosition="LabelPosition.Left"
+                                        @bind-Checked="@dataIdLoker.isOpen"
+                                        Alignment="CheckBoxContentAlignment.Default">
+                                Aktif:
+                            </DxCheckBox>
+                        </div>
+                        <div class="card-body">
+                            <form class="row">
+                                <div class="col-12 mb-3">
+                                    <label class="mb-1" for="inputUsername">Nama Loker</label>
+                                    <DxTextBox @bind-Text="@dataIdLoker.judul"
+                                               BindValueMode="BindValueMode.OnInput"
+                                               ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                                               NullText="Nama Lowongan"
+                                               CssClass="asw" />
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="mb-1" for="inputFirstName">Keterangan Loker</label>
+                                    <DxMemo @bind-Text="@dataIdLoker.keterangan"
+                                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                                            BindValueMode="BindValueMode.OnInput"
+                                            NullText="Keterangan"
+                                            Rows="@memoRow"
+                                            ResizeMode="MemoResizeMode.VerticalAndHorizontal" />
+                                </div>
+                                @*          <div class="col-12">
+                                    <div class="text-end">
+                                    <DxButton CssClass="text-end"
+                                    Click="btnUpdateLoker"
+                                    Text="Save Changes" />
+                                    </div>
+                                    </div>*@
+                            </form>
+                        </div>
+                    </div>
+                </EditForm>
+                <div class="card mb-3 card-kriteria">
+                    <div class="card-header d-flex flex-wrap">
+                        Kriteria
+                        <DxButton Text="Kriteria"
+                                  Click="addKriteriaList"
+                                  IconCssClass="fas fa-plus fa-sm me-1"
+                                  CssClass="ms-auto"
+                                  RenderStyle="ButtonRenderStyle.Success"
+                                  SizeMode="SizeMode.Small">
+                        </DxButton>
+                    </div>
+                    <div class="card-body">
+                        <div class="kriteria-loker">
+                            @foreach (var item in kriteriaList)
+                            {
+                                <p>● @item.kriteria</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <DxButton CssClass="text-end"
+                              SizeMode="SizeMode.Medium"
+                              Click="btnUpdateLoker"
+                              Text="Save Changes" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<DxPopup @bind-Visible="@popKriteria"
+         ShowFooter="true"
+         HeaderText="Tambah Kriteria">
+    <BodyTemplate>
+        <label class="mb-1" for="inputUsername">Kriteria</label>
+        <DxTextBox @bind-Text="dataIdLoker.judul"
+                   BindValueMode="BindValueMode.OnInput"
+                   ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                   NullText="Tambah Kriteria" />
+    </BodyTemplate>
+    <FooterContentTemplate>
+        <DxButton CssClass="popup-button" RenderStyle="ButtonRenderStyle.Primary" Text="OK" Click="@(() => popKriteria = false)" />
+        <DxButton CssClass="popup-button" RenderStyle="ButtonRenderStyle.Secondary" Text="Cancel" Click="@(() => popKriteria = false)" />
+    </FooterContentTemplate>
+</DxPopup>
+@code {
+
+}

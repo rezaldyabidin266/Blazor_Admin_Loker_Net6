@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>BlazorAdminLoker2022</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="BlazorAdminLoker2022.styles.css" rel="stylesheet" />
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="image/logo/Favicon.png" />
+    <link rel="icon" type="image/x-icon" href="image/logo/Favicon.png">
+
+    <!--DevExtreme themes-->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.2.4/css/dx.light.css">
+    <link rel="stylesheet" href="https://unpkg.com/devextreme@21.2.4/dist/css/dx.common.css">
+    <!-- DevExpress  -->
+    <link href="_content/DevExpress.Blazor/dx-blazor.css" rel="stylesheet" />
+
+    <!-- Icon FontAwesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- Google material Icon -->
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+    <!-- Icon DevExtreme -->
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@4.6.3/dist/css/ionicons.min.css">
+
+    <!-- Swiper.js Css -->
+    <!--<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />-->
+
+    <!-- DevExpress BS5 Theme -->
+    <link rel="stylesheet" href="css/blazor-theme/bootstrap.min.css" />
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js" autostart="false"></script>
+    <script type="module">
+        import { BrotliDecode } from './decode.min.js';
+        Blazor.start({
+            loadBootResource: function (type, name, defaultUri, integrity) {
+                if (type !== 'dotnetjs' && location.hostname !== 'localhost') {
+                    return (async function () {
+                        const response = await fetch(defaultUri + '.br');
+                        if (!response.ok) {
+                            console.error(response.statusText);
+                        }
+                        const originalResponseBuffer = await response.arrayBuffer();
+                        const originalResponseArray = new Int8Array(originalResponseBuffer);
+                        const decompressedResponseArray = BrotliDecode(originalResponseArray);
+                        const contentType = type ===
+                            'dotnetwasm' ? 'application/wasm' : 'application/octet-stream';
+                        return new Response(decompressedResponseArray,
+                            { headers: { 'content-type': contentType } });
+                    })();
+                }
+            }
+        });
+    </script>
+    <script>
+        navigator.serviceWorker.register('service-worker.js').then(reg => {
+            reg.update();
+        });
+    </script>
+    <script>
+        let online = navigator.onLine;
+        localStorage.setItem("online", online);
+    </script>
+
+    <!-- Js BS5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Jquery  3.5.1-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExpress -->
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.4.1.min.js"></script>
+
+    <!-- DevExtreme library -->
+    <script src="https://cdn3.devexpress.com/jslib/21.2.4/js/dx.all.js"></script>
+
+    <!-- Swiper.js Js -->
+    <!--<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>-->
+    <!-- GreenShock -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>-->
+    <!-- GreenShock Plugin Scroll Trigger -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/ScrollTrigger.min.js"></script>-->
+    <!-- GreenShock Plugin Text -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/TextPlugin.min.js"></script>-->
+    <!-- Js Import -->
+    <script src="js/devExtreme/ToastDevExtreme.js"></script>
+    <script src="js/js-component/navbar/navbar-sidebar.js"></script>
+    <script src="js/js-utility/getCopyClipboard.js"></script>
+    <script src="js/js-utility/getBrowserUser.js"></script>
+    <script src="js/js-utility/getUserAgent.js"></script>
+    <script src="js/js-utility/getUserLocation.js"></script>
+    <script src="js/js-utility/getUserBrowserDimensi.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,338 @@
+﻿@color0: #ffffff; // Appears 9 times
+@color1: #ffba56; // Appears 2 times
+@color2: #289cf5; // Appears 2 times
+@color3: #84c0ec; // Appears 2 times
+@color4: #8b95a5; // Appears 6 times
+@color5: #fcfdfe; // Appears 2 times
+
+/*Import less-theme*/
+/*@import "../../wwwroot/css/less-theme/theme-color.less";*/
+
+.admin-loker {
+    .headers {
+        padding-top: 1.2rem;
+        padding-bottom: 1rem;
+
+        h1 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 0;
+            margin-right: 0;
+            font-size: 1.35rem;
+            line-height: 1.4;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #515357;
+        }
+    }
+
+    .counters {
+        .card {
+            background-color: @color0;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,0.1), 0 0.9375rem 1.40625rem rgba(90,97,105,0.1), 0 0.25rem 0.53125rem rgba(90,97,105,0.12), 0 0.125rem 0.1875rem rgba(90,97,105,0.1);
+            margin-bottom: 30px;
+            position: relative;
+
+            .card-statistic-3 {
+                .card-icon-large {
+                    .fas {
+                        font-size: 110px;
+                    }
+
+                    .far {
+                        font-size: 110px;
+                    }
+
+                    .fab {
+                        font-size: 110px;
+                    }
+
+                    .fal {
+                        font-size: 110px;
+                    }
+                }
+
+                .card-icon {
+                    color: #000000;
+                    line-height: 50px;
+                    margin-left: 15px;
+                    opacity: 0.1;
+                    position: absolute;
+                    right: -5px;
+                    text-align: center;
+                    top: 20px;
+                }
+            }
+        }
+
+        .l-bg-cherry {
+            background: linear-gradient(to right, #493240, #ff0099) !important;
+            color: @color0;
+        }
+
+        .l-bg-blue-dark {
+            background: linear-gradient(to right, #373b44, #4286f4) !important;
+            color: @color0;
+        }
+
+        .l-bg-green-dark {
+            background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+            color: @color0;
+        }
+
+        .l-bg-orange-dark {
+            background: linear-gradient(to right, #a86008, @color1) !important;
+            color: @color0;
+        }
+
+        .l-bg-cyan {
+            background: linear-gradient(135deg, @color2, @color3) !important;
+            background: linear-gradient(135deg, @color2, @color3) !important;
+            color: @color0;
+            color: @color0;
+        }
+
+        .l-bg-green {
+            background: linear-gradient(135deg, #23bdb8 0%, #43e794 100%) !important;
+            color: @color0;
+        }
+
+        .l-bg-orange {
+            background: linear-gradient(to right, #f9900e, @color1) !important;
+            color: @color0;
+        }
+    }
+
+    .lokers {
+        font-family: 'Poppins', sans-serif;
+
+        .pr-12 {
+            padding-right: 12px !important;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px !important;
+        }
+
+        .b-1 {
+            border: 1px solid #ebebeb !important;
+        }
+
+        .card {
+            -ms-flex-direction: column;
+            -webkit-transition: .5s;
+            background-clip: border-box;
+            background-color: #ffffff;
+            border-radius: .25rem;
+            border: 1px solid rgba(0,0,0,.125);
+            display: -ms-flexbox;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+            min-width: 0;
+            position: relative;
+            transition: .5s;
+            word-wrap: break-word;
+        }
+
+        .media {
+            -ms-flex-align: start;
+            -webkit-transition: background-color .2s linear;
+            align-items: flex-start;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 16px 12px;
+            transition: background-color .2s linear;
+
+            .avatar {
+                flex-shrink: 0;
+            }
+        }
+
+        .card-body {
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 1.25rem;
+
+            .judul {
+                font-family: 'Bree Serif', serif;
+                letter-spacing: 0.2px;
+                color: #32373d;
+            }
+
+            .keterangan {
+                font-size: 0.9rem;
+                word-spacing: 0.1px;
+                letter-spacing: 0.1px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+            }
+        }
+
+        .no-radius {
+            border-radius: 0 !important;
+        }
+
+        .avatar-xl {
+            font-size: 1.25rem;
+            height: 100px;
+            line-height: 64px;
+            width: 100px;
+        }
+
+        .avatar {
+            background-color: #f5f6f7;
+            border-radius: 100%;
+            color: @color4;
+            display: inline-block;
+            height: 60px;
+            line-height: 36px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            width: 60px;
+        }
+
+        img {
+            border-style: none;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        .mb-2 {
+            margin-bottom: .5rem !important;
+        }
+
+        .fs-20 {
+            font-size: 20px !important;
+        }
+
+        .pr-16 {
+            padding-right: 16px !important;
+        }
+
+        .ls-1 {
+            letter-spacing: 1px !important;
+        }
+
+        .fw-300 {
+            font-weight: 300 !important;
+        }
+
+        .fs-16 {
+            font-size: 16px !important;
+        }
+
+        .media-body > * {
+            margin-bottom: 0;
+        }
+
+        small {
+            color: @color4;
+            font-family: Roboto,sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+        }
+
+        time {
+            color: @color4;
+            font-family: Roboto,sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+        }
+
+        .small {
+            color: @color4;
+            font-family: Roboto,sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+        }
+
+        .fs-14 {
+            font-size: 14px !important;
+        }
+
+        .mb-12 {
+            margin-bottom: 12px !important;
+        }
+
+        .text-fade {
+            color: rgba(77,82,89,0.7) !important;
+        }
+
+        .card-footer {
+            background-color: #32373d;
+            background-color: #32373d;
+            border-top: 1px solid rgba(0,0,0,.125);
+            border-top: 1px solid rgba(77, 82, 89, 0.07);
+            border-top: 1px solid rgba(77,82,89,0.07);
+            color: @color4;
+            padding: .75rem 1.25rem;
+            padding: 10px 20px;
+            padding: 10px 20px;
+
+            &:last-child {
+                border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+            }
+        }
+
+        .flexbox {
+            -webkit-box-pack: justify;
+            display: -webkit-box;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .align-items-center {
+            -ms-flex-align: center !important;
+            align-items: center !important;
+        }
+
+        .card-footer > * {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .hover-shadow {
+            -webkit-box-shadow: 0 0 35px rgba(0, 0, 0, 0.11);
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.11);
+        }
+
+        .fs-10 {
+            font-size: 10px !important;
+        }
+
+        .btn-action{
+            padding-bottom:15px;
+            padding-left:10px
+        }
+
+        .sub-right {
+            height: 100vh;
+
+            .blockquote-custom {
+                position: relative;
+                font-size: 1.1rem;
+
+                .blockquote-custom-icon {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: -25px;
+                    left: 50px;
+                }
+
+                p {
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+}

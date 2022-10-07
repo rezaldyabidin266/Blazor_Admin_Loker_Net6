@@ -1,0 +1,32 @@
+.historyJawaban-container .headers[b-xs2ryeor26] {
+  padding-top: 1.2rem;
+  padding-bottom: 1rem;
+}
+.historyJawaban-container .headers h1[b-xs2ryeor26] {
+  font-family: 'Bree Serif', serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.1px;
+  color: #191919;
+}
+.historyJawaban-container .master-detail[b-xs2ryeor26] {
+  padding-top: 8px;
+  padding-left: 8px;
+  white-space: normal;
+}
+.historyJawaban-container .master-detail h6[b-xs2ryeor26] {
+  letter-spacing: 0.1px;
+  color: #202124;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+.historyJawaban-container .master-detail p[b-xs2ryeor26] {
+  margin-bottom: 0.8rem;
+}
+.historyJawaban-container .master-detail p span[b-xs2ryeor26] {
+  letter-spacing: 0.1px;
+  color: #202124;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  margin-right: 5px;
+}

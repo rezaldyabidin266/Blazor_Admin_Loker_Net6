@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = browser
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = true
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = BlazorAdminLoker2022
+build_property.RootNamespace = BlazorAdminLoker2022
+build_property.ProjectDir = D:\VisualStudio2020\BlazorAdminLoker2022\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\VisualStudio2020\BlazorAdminLoker2022
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Shared/Admin/AdminLoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFkbWluXEFkbWluTG9naW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Shared/Admin/AdminSidebar.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFkbWluXEFkbWluU2lkZWJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Laporan/AdminCalonPelamarPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFwb3JhblxBZG1pbkNhbG9uUGVsYW1hclBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ndh3p5mjg3
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Laporan/AdminDetailJawabanPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFwb3JhblxBZG1pbkRldGFpbEphd2FiYW5QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-k96qm9i2t4
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Laporan/AdminHistoryJawaban.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFwb3JhblxBZG1pbkhpc3RvcnlKYXdhYmFuLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-8m9tro0ftw
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Laporan/AdminHistoryJawabanByLoker.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFwb3JhblxBZG1pbkhpc3RvcnlKYXdhYmFuQnlMb2tlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-3gcgr3v42r
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Laporan/AdminHistoryJawabanByPelamar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFwb3JhblxBZG1pbkhpc3RvcnlKYXdhYmFuQnlQZWxhbWFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xs2ryeor26
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Login/AdminEditPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cQWRtaW5FZGl0UGFzc3dvcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-jlm7hx0ei8
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Login/AdminLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cQWRtaW5Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-fvkp9qb2cr
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Loker/AdminLoker.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9rZXJcQWRtaW5Mb2tlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-jr9ca39y5a
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Loker/AdminLokerEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9rZXJcQWRtaW5Mb2tlckVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-nrz0bbcejv
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Pages/Loker/AdminQuestion.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9rZXJcQWRtaW5RdWVzdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-q1b3abdcvq
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Shared/Admin/AdminNavMobile.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFkbWluXEFkbWluTmF2TW9iaWxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ftnpjwchly
+
+[D:/VisualStudio2020/BlazorAdminLoker2022/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-u3wvcann07

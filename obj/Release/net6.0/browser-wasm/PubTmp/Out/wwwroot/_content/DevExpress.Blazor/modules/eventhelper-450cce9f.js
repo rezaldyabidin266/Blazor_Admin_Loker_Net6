@@ -1,0 +1,1 @@
+class t{static markHandled(t,e=!0){t.cancelable&&t.preventDefault(),t.stopPropagation(),e&&t.stopImmediatePropagation()}static getOriginalSource(t){return t.composedPath()[0]}static containsInComposedPath(t,e){const a=t.composedPath();for(const t in a)if(e(a[t]))return!0;return!1}static getEventSource(t){var e;return null!==(e=t.srcElement)&&void 0!==e?e:t.target}}export{t as E};
